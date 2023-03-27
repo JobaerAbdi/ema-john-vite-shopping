@@ -4,7 +4,7 @@ const DisplayProducts = ({product,handleAddToCart}) => {
     const {img,name,price,shipping} = product;
     return (
         <div>
-            <div className="card w-full h-full bg-base-100 shadow-xl">
+  <div className="card w-full h-full bg-base-100 shadow-xl">
   <figure><img className=' p-5' src={img} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{name}</h2>

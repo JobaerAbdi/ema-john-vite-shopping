@@ -28,7 +28,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-    <div className="form-control px-12">
+    <div className="form-control hidden lg:block px-12">
       <input type="text" placeholder="Search" className="input input-bordered" />
     </div>
     <div className="dropdown dropdown-end">

@@ -19,8 +19,8 @@ const Shop = () => {
 
     return (
         <div>
-            <div className='flex lg:px-12'>
-               <div className='w-4/5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 bg-slate-500'>
+            <div className='flex flex-col lg:flex-row lg:px-12'>
+               <div className='sm:w-full lg:w-4/5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 bg-slate-500'>
                     {
                         products.map(product=> <DisplayProducts
                         key={product.id}
@@ -30,7 +30,7 @@ const Shop = () => {
                     }
                </div>
 
-               <div className='w-1/5 bg-amber-500 mt-5 ml-3'>
+               <div className='sm:w-full lg:w-1/5 py-6 bg-amber-500 mt-5 lg:ml-3'>
                 <CartCalculate 
                  cart={cart}
                 ></CartCalculate>

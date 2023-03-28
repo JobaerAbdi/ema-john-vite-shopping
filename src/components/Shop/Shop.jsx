@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { addToDb, getShoppingCart } from '../../utilities/fakedb';
 import CartCalculate from '../CartCalculate/CartCalculate';
 import DisplayProducts from '../DisplayProducts/DisplayProducts';
 const Shop = () => {
@@ -12,11 +13,17 @@ const Shop = () => {
         .then(date => setProducts(date));
     },[])
 
+    useEffect(()=>{
+        const storedCart = getShoppingCart();
+        console.log(storedCart);
+    },[])
+
     const handleAddToCart = (product)=>{
         const newCart = [...cart,product];
         setCart(newCart);
+        addToDb(product.id);
 
-        toast.success('🦄 Wow Cart Added!!', {
+        toast.success('🦄 Wow Cart is Added!!', {
             position: "top-center",
             autoClose: 500,
             hideProgressBar: false,
@@ -41,7 +48,7 @@ const Shop = () => {
                     }
                </div>
 
-               <div className='sm:w-full lg:w-1/5 py-6 bg-amber-500 mt-5 lg:ml-3'>
+               <div className='sm:w-full lg:w-1/5 py-6 bg-amber-500 mt-5 lg:ml-3 rounded-lg'>
                 <CartCalculate 
                  cart={cart}
                 ></CartCalculate>

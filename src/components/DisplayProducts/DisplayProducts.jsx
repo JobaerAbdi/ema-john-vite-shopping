@@ -13,7 +13,7 @@ const DisplayProducts = ({product,handleAddToCart}) => {
   </div>
   <div>
     <div className="card-actions justify-center pb-3">
-      <button onClick={()=>handleAddToCart(product)} className="btn btn-primary">Details</button>
+      <button onClick={()=>handleAddToCart(product)} className="btn btn-primary">Add To Cart</button>
     </div>
   </div>
  </div>

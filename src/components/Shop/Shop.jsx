@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import CartCalculate from '../CartCalculate/CartCalculate';
 import DisplayProducts from '../DisplayProducts/DisplayProducts';
-
 const Shop = () => {
     const [products,setProducts] = useState([]);
     const [cart,setCart] = useState([]);
@@ -15,6 +15,17 @@ const Shop = () => {
     const handleAddToCart = (product)=>{
         const newCart = [...cart,product];
         setCart(newCart);
+
+        toast.success('🦄 Wow Cart Added!!', {
+            position: "top-center",
+            autoClose: 500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
     };
 
     return (

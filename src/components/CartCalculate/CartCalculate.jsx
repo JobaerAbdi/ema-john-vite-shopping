@@ -1,6 +1,7 @@
 import React from 'react';
 
 const CartCalculate = ({cart}) => {
+    console.log(cart);
     let totalPrice = 0;
     let totalShippingPrice = 0;
     for(const product of cart){
